@@ -1,0 +1,47 @@
+﻿@*@model IEnumerable<EmployeeDemo.Models.FetchData>*@
+@model List<EmployeeDemo.Models.FetchData>
+
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-12">
+        <h1 class="text-center">List Of Employee</h1>
+            <a class=" btn btn-success m-1" asp-action="CreateEmployee">Add Employee</a>
+
+        <table class="table table-bordered ">
+            <tr class="text-center">
+                    <th>EmployeeId</th>
+                    <th>EmployeeName</th>
+                    <th>Gender</th>
+                    <th>Dob</th>
+                    <th>Department</th>
+                    <th>MobileNo</th>
+                    <th class="align-content-lg-stretch">Address</th>
+                    <th>UserName</th>
+                    <th>Passoword</th>
+                    <th>Actions</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr class="Text-center">
+                        <td>@item.EmployeeId</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.Dob</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Address</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Passoword</td>
+                        <td>
+                            <a class=" btn btn-warning m-1" asp-action="DetailEmployee" asp-route-id="@item.EmployeeId">View</a>
+                            <a class=" btn btn-warning m-1" asp-action="UpdateEmployee" asp-route-id="@item.EmployeeId">Edit</a>
+                            <a class=" btn btn-danger m-1" asp-action="DeleteEmployee" asp-route-id="@item.EmployeeId">Delete</a>
+                        </td>
+                </tr>
+            }
+        </table>
+    </div>
+    </div>
+</div>

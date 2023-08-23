@@ -1,0 +1,4 @@
+﻿
+Scaffold-DbContext "Server=ARCHE-ITD440\SQLEXPRESS;Database=Employee_DB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Scaffold-DbContext "Server=ARCHE-ITD440\SQLEXPRESS;Database=Employee_DB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables Department_Mst, Employee_Mst -Force
